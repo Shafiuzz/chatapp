@@ -2,8 +2,7 @@
 import socket
 import threading
 
-HOST = '127.0.0.1'
-PORT = 1234 # You can use any port between 0 to 65535
+HOST = 'https://metachatserve.onrender.com'
 LISTENER_LIMIT = 5
 active_clients = [] # List of all currently connected users
 
@@ -65,10 +64,10 @@ def main():
     try:
         # Provide the server with an address in the form of
         # host IP and port
-        server.bind((HOST, PORT))
-        print(f"Running the server on {HOST} {PORT}")
+        server.bind((HOST))
+        print(f"Running the server on {HOST}")
     except:
-        print(f"Unable to bind to host {HOST} and port {PORT}")
+        print(f"Unable to bind to host {HOST}")
 
     # Set server limit
     server.listen(LISTENER_LIMIT)
